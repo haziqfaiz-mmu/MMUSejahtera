@@ -1,12 +1,19 @@
 package com.haziqfaiz.mmusejahtera;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -20,6 +27,26 @@ public class recipientRegisterController {
 
     @FXML
     private Button submitButton;
+
+    @FXML
+    private TextFlow logInText;
+
+    @FXML
+    public void initialize() {
+        //registerText = new TextFlow(new Text("Not registered?"));
+        logInText.getChildren().add(new Text("Back to"));
+        Hyperlink hyperLink = new Hyperlink("log in");
+        hyperLink.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event){
+                try{
+                    logInHyperLink(event);
+                }
+                catch (IOException e){}
+
+            }
+        });
+        logInText.getChildren().add(hyperLink);
+    }
 
 
 
@@ -62,6 +89,17 @@ public class recipientRegisterController {
 
         showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
                 "Welcome to MMUSejahtera" + fullNameField.getText());
+    }
+
+    public void logInHyperLink(ActionEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("recipientLogIn.fxml"));
+
+        Scene scene = new Scene(root, 1000, 700);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("User Log In");
+        stage.setScene(scene);
+        stage.show();
     }
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {

@@ -1,17 +1,29 @@
 package com.haziqfaiz.mmusejahtera;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class recipientLogInController {
@@ -32,7 +44,17 @@ public class recipientLogInController {
     public void initialize() {
         //registerText = new TextFlow(new Text("Not registered?"));
         registerText.getChildren().add(new Text("Not registered?"));
-        registerText.getChildren().add(new Hyperlink("Register Now"));
+        Hyperlink hyperLink = new Hyperlink("Register Now!");
+        hyperLink.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event){
+                try{
+                registerHyperLink(event);
+                }
+                catch (IOException e){}
+
+            }
+        });
+        registerText.getChildren().add(hyperLink);
     }
 
     public void login(ActionEvent event) throws SQLException {
@@ -63,6 +85,17 @@ public class recipientLogInController {
         } else {
             infoBox("Login Successful!", null, "Failed");
         }
+    }
+
+    public void registerHyperLink(ActionEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("recipientRegister.fxml"));
+
+        Scene scene = new Scene(root, 1000, 700);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("User Registration");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void infoBox(String infoMessage, String headerText, String title) {
