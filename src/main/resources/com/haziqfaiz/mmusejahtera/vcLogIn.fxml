@@ -14,7 +14,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.text.TextFlow?>
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="com.haziqfaiz.mmusejahtera.recipientLogInController">
+          fx:controller="com.haziqfaiz.mmusejahtera.vcLogInController">
     <padding>
         <Insets bottom="40" left="40" right="40" top="40"/>
     </padding>
@@ -23,7 +23,7 @@
         <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity" minWidth="200" prefWidth="200"/>
     </columnConstraints>
     <!-- Add Header Label -->
-    <Label text="MMU Sejahtera" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"
+    <Label text="MMU Sejahtera Vaccination Center" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"
            GridPane.rowIndex="0" GridPane.rowSpan="1">
         <font>
             <Font name="Arial" size="24"/>
@@ -48,6 +48,5 @@
             <Insets bottom="20" left="0" right="0" top="20"/>
         </GridPane.margin>
     </Button>
-    <TextFlow fx:id="registerText" GridPane.rowIndex="5" GridPane.columnIndex="1" />
-    <TextFlow fx:id="vcAdminText" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+    <TextFlow fx:id="recipientAdminText" GridPane.rowIndex="5" GridPane.columnIndex="1" />
 </GridPane>

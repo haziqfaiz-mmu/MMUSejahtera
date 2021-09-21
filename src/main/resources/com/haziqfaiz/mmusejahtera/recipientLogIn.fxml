@@ -49,4 +49,5 @@
         </GridPane.margin>
     </Button>
     <TextFlow fx:id="registerText" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+    <TextFlow fx:id="vcAdminText" GridPane.rowIndex="6" GridPane.columnIndex="1" />
 </GridPane>
