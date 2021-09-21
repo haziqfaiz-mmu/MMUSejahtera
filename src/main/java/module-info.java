@@ -6,4 +6,5 @@ module com.haziqfaiz.mmusejahtera {
 
     opens com.haziqfaiz.mmusejahtera to javafx.fxml;
     exports com.haziqfaiz.mmusejahtera;
+
 }
