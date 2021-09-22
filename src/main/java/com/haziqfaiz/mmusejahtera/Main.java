@@ -13,9 +13,9 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         System.out.println(getClass());
 
-        Parent root = FXMLLoader.load(getClass().getResource("recipientLogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("recipientTableView.fxml"));
 
-        Scene scene = new Scene(root, 1000, 700);
+        Scene scene = new Scene(root);
         stage.setTitle("User Login");
         stage.setScene(scene);
         stage.show();

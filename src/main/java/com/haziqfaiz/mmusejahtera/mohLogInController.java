@@ -83,7 +83,7 @@ public class mohLogInController {
         String Id = IDField.getText();
         String password = passwordField.getText();
 
-        recipientLogInDAO jdbcDao = new recipientLogInDAO();
+        recipientDAO jdbcDao = new recipientDAO();
         boolean flag = jdbcDao.validate(Id, password);
 
         if (!flag) {
@@ -93,24 +93,13 @@ public class mohLogInController {
         }
     }
 
-    public void registerHyperLink(ActionEvent event) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource("recipientRegister.fxml"));
-
-        Scene scene = new Scene(root, 1000, 700);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("User Registration");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void recipientHyperLink(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("recipientLogIn.fxml"));
 
         Scene scene = new Scene(root, 1000, 700);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("MOH Login");
+        stage.setTitle("Recipients Login");
         stage.setScene(scene);
         stage.show();
     }

@@ -1,6 +1,5 @@
 package com.haziqfaiz.mmusejahtera;
 
-import com.haziqfaiz.mmusejahtera.recipientLogInDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -82,7 +81,7 @@ public class vcLogInController {
         String Id = IDField.getText();
         String password = passwordField.getText();
 
-        recipientLogInDAO jdbcDao = new recipientLogInDAO();
+        recipientDAO jdbcDao = new recipientDAO();
         boolean flag = jdbcDao.validate(Id, password);
 
         if (!flag) {

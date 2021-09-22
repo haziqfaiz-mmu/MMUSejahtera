@@ -6,10 +6,28 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class recipientLogInDAO {
+public class recipientDAO {
 
     private static final String DATABASE_URL ="jdbc:sqlite:/home/haziq/Documents/javaFX/database/MMUSejahtera.db";
     private static final String SELECT_QUERY = "SELECT * FROM RECIPIENT WHERE RECIPIENT_ID = ? AND RECIPIENT_PASSWORD = ?";
+    private static final String INSERT_QUERY = "INSERT INTO RECIPIENT (RECIPIENT_ID, RECIPIENT_PASSWORD, RECIPIENT_NAME) VALUES (?,?,?)";
+
+    public void insertRecord(String icPassport, String password, String name) throws SQLException{
+
+        try(Connection connection = DriverManager.getConnection(DATABASE_URL)){
+
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY);
+            preparedStatement.setString(1,icPassport);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3,name);
+
+            System.out.println(preparedStatement);
+
+            preparedStatement.executeUpdate();
+        }catch(SQLException e){
+            printSQLException(e);
+        }
+    }
 
     public boolean validate(String ic, String password) throws SQLException {
 

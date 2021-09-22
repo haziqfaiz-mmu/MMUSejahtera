@@ -104,7 +104,7 @@ public class recipientLogInController {
         String Id = IDField.getText();
         String password = passwordField.getText();
 
-        recipientLogInDAO jdbcDao = new recipientLogInDAO();
+        recipientDAO jdbcDao = new recipientDAO();
         boolean flag = jdbcDao.validate(Id, password);
 
         if (!flag) {

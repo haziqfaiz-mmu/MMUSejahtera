@@ -84,7 +84,7 @@ public class recipientRegisterController {
         String fullName = fullNameField.getText();
         String password = passwordField.getText();
 
-        recipientRegisterDAO dao = new recipientRegisterDAO();
+        recipientDAO dao = new recipientDAO();
         dao.insertRecord(id,password,fullName);
 
         showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
