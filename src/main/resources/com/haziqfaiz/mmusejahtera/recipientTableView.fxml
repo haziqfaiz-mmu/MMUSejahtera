@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haziqfaiz.mmusejahtera.recipientTableViewController">
     <children>
-        <TableView fx:id="table" layoutX="0" layoutY="0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="561.0">
-            <columns>
-                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="nameColumn" prefWidth="155.0" text="Name" />
-                <TableColumn fx:id="firstDateColumn" prefWidth="74.0" text="1st Date" />
-                <TableColumn fx:id="firstStatusColumn" prefWidth="85.0" text="1st Status" />
-                <TableColumn fx:id="secndDateColumn" prefWidth="83.0" text="2nd Date" />
-                <TableColumn fx:id="secndStatusColumn" prefWidth="88.0" text="2nd Status" />
-            </columns>
-        </TableView>
+        <TableView fx:id="table" layoutX="0" layoutY="0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="561.0" />
         <Button layoutX="243.0" layoutY="650.0" mnemonicParsing="false" onAction="#mohScene" text="Back" />
     </children>
 </AnchorPane>

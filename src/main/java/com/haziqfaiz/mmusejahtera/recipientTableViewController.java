@@ -1,5 +1,7 @@
 package com.haziqfaiz.mmusejahtera;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -9,7 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class recipientTableViewController {
@@ -20,29 +26,20 @@ public class recipientTableViewController {
     @FXML
     private TableView<Recipient> table;
 
-    @FXML
-    private TableColumn<Recipient, String> idColumn;
 
-    @FXML
-    private TableColumn<Recipient, String> nameColumn;
+    /////////////////////////
+    public void initialize ()throws SQLException, ClassNotFoundException{
 
-    @FXML
-    private TableColumn<Recipient, String> firstDateColumn;
-
-    @FXML
-    private TableColumn<Recipient, String> firstStatusColumn;
-
-    @FXML
-    private TableColumn<Recipient, String> secondDateColumn;
-
-    @FXML
-    private TableColumn<Recipient, String> secondStatusColumn;
-
-    ResultSet resultSet = null;
+        recipientDAO dao = new recipientDAO();
+        dao.buildData(table);
+    }
 
 
-
+    ///////////////////////////////
     public void mohScene(){
-        System.out.println("Back to register");
+        System.out.println("Back to MOH");
     }
 }
+
+
+
