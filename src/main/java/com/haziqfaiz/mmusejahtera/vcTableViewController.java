@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class vcTableViewController {
 
@@ -17,27 +18,18 @@ public class vcTableViewController {
     @FXML
     private TableView<VCSTATS> table;
 
-    @FXML
-    private TableColumn<VCSTATS, String> nameColumn;
+    /////////////////////////
+    public void initialize ()throws SQLException, ClassNotFoundException{
 
-    @FXML
-    private TableColumn<VCSTATS, String> dateColumn;
-
-    @FXML
-    private TableColumn<VCSTATS, String> capacityColumn;
-
-    @FXML
-    private TableColumn<VCSTATS, String> firstDoseColumn;
-
-    @FXML
-    private TableColumn<VCSTATS, String> secondDoseColumn;
-
-    @FXML
-    private TableColumn<VCSTATS, String> appointmentColumn;
-
-    ResultSet resultSet = null;
-
-    public void mohScene(){
-        System.out.println("Back to register");
+        vcStatsDAO dao = new vcStatsDAO();
+        dao.buildData(table);
     }
+
+
+    ///////////////////////////////
+    public void mohScene(){
+        System.out.println("Back to MOH");
+    }
+
+
 }

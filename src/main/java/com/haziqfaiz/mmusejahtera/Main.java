@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         System.out.println(getClass());
 
-        Parent root = FXMLLoader.load(getClass().getResource("recipientTableView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vcTableView.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("recipientLogIn.fxml"));
 
         Scene scene = new Scene(root,1000,1000);
