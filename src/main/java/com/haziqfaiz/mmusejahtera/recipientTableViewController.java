@@ -37,7 +37,7 @@ public class recipientTableViewController {
 
     ///////////////////////////////
     public void mohScene(){
-        System.out.println("Back to MOH");
+        System.out.println("Back to MOH Main View");
     }
 }
 
