@@ -27,9 +27,9 @@
         </GridPane.margin>
     </Label>
    <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="339.0" text="View all VC stats" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="342.0" text="View all Recipients" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="339.0" text="View Recipient by ID" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="344.0" text="Distribute Vaccine" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="342.0" text="View all Recipients details" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="339.0" text="View Recipient Details by ID" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="344.0" text="Distribute Vaccine tp VC" GridPane.columnIndex="1" GridPane.rowIndex="13" />
    <TextField alignment="CENTER" promptText="Enter Recipient IC/Passport" GridPane.columnIndex="1" GridPane.rowIndex="8">
       <opaqueInsets>
          <Insets bottom="24.0" />
@@ -38,7 +38,11 @@
          <Font size="11.0" />
       </font>
    </TextField>
+   <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="338.0" text="Log Out" GridPane.columnIndex="1" GridPane.rowIndex="15" />
    <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
